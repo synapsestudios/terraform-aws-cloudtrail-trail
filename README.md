@@ -35,7 +35,15 @@ No required inputs.
 
 ## Optional Inputs
 
-No optional inputs.
+The following input variables are optional (have default values):
+
+### <a name="input_region"></a> [region](#input_region)
+
+Description: Define the region you'd wish the cloudtrail resources to be created in, example: us-west-2
+
+Type: `string`
+
+Default: `"us-west-2"`
 
 ## Outputs
 
