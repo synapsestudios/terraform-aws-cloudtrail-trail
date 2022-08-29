@@ -26,6 +26,11 @@ resource "aws_s3_bucket" "management-bucket" {
   force_destroy = true
 }
 
+resource "aws_s3_bucket_policy" "management-bucket-policy" {
+  bucket = aws_s3_bucket.management-bucket.id
+  policy = data.aws_iam_policy_document.cloudtrail_s3_policy.json
+}
+
 #Create bucket ACL
 resource "aws_s3_bucket_acl" "management-bucket-acl" {
   bucket = aws_s3_bucket.management-bucket.id
