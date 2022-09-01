@@ -6,6 +6,5 @@ variable "region" {
 
 variable "namespace" {
   type        = string
-  default     = "dev"
-  description = "Define the namespace here, example: dev, uat, prod"
+  description = "Define the namespace here, example: foobarinc-dev (projectname-environment)"
 }
