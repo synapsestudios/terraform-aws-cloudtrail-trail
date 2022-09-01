@@ -22,7 +22,7 @@ data "aws_canonical_user_id" "current" {}
 
 #Create CloudTrail bucket
 resource "aws_s3_bucket" "management-bucket" {
-  bucket        = "trails-management-bucket"
+  bucket        = "trails-management-bucket-${var.namespace}"
   force_destroy = true
 }
 
