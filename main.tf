@@ -20,10 +20,19 @@ resource "aws_cloudtrail" "management-trail" {
 data "aws_caller_identity" "current" {}
 data "aws_canonical_user_id" "current" {}
 
+# https://registry.terraform.io/providers/hashicorp/random/latest/docs
+#Create random bytes for unique bucket ID (This is stored in state and reused till resources need to be created again)
+resource "random_id" "id" {
+  byte_length = 8
+}
+
 #Create CloudTrail bucket
 resource "aws_s3_bucket" "management-bucket" {
-  bucket        = "trails-management-bucket"
+  bucket        = "trails-management-bucket-${var.namespace}-${random_id.id.hex}"
   force_destroy = true
+  depends_on = [
+    random_id.id
+  ]
 }
 
 resource "aws_s3_bucket_policy" "management-bucket-policy" {
