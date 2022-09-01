@@ -24,9 +24,6 @@ data "aws_canonical_user_id" "current" {}
 resource "aws_s3_bucket" "management-bucket" {
   bucket        = "trails-management-bucket-${var.namespace}"
   force_destroy = true
-  depends_on = [
-    random_id.id
-  ]
 }
 
 resource "aws_s3_bucket_policy" "management-bucket-policy" {
