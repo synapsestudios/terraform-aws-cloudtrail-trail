@@ -11,3 +11,5 @@ jobs:
     uses: ./.github/workflows/terraform_format.yml
   tfsec-pr-commenter:
     uses: ./.github/workflows/tfsec_pr_commenter.yml
+  terraform-docs:
+    uses: ./.github/workflows/documentation.yml
