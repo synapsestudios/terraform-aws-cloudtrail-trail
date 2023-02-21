@@ -7,7 +7,7 @@ resource "aws_cloudtrail" "management-trail" {
   enable_log_file_validation    = true
   enable_logging                = true
   depends_on = [
-    data.aws_iam_policy_document.cloudtrail_s3_policy,
+    aws_s3_bucket_policy.management-bucket-policy,
     aws_s3_bucket_acl.management-bucket-acl
   ]
 }
