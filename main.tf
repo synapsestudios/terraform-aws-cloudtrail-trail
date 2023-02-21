@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.region
-}
-
 #Create CloudTrail trail
 resource "aws_cloudtrail" "management-trail" {
   name                          = "management-trail"

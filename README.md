@@ -36,7 +36,6 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Define the namespace here, example: foobarinc-dev (projectname-environment) | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | Define the region you'd wish the cloudtrail resources to be created in, example: us-west-2 | `string` | `"us-west-2"` | no |
 
 ## Outputs
 
