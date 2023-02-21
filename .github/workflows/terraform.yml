@@ -12,7 +12,7 @@ jobs:
   tfsec-pr-commenter:
     uses: ./.github/workflows/tfsec_pr_commenter.yml
   terraform-graph:
-    uses: ./.github/workflows/tfsec_graph.yml
+    uses: ./.github/workflows/terraform_graph.yml
   terraform-docs:
     needs: [terraform-format-test, tfsec-pr-commenter]
     uses: ./.github/workflows/documentation.yml
