@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
-
 #Create CloudTrail trail
 resource "aws_cloudtrail" "management-trail" {
   name                          = "management-trail"
