@@ -4,6 +4,10 @@ This module creates a standard management events cloudtrail trail, and the neces
 
 https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html
 
+## Resource Graph
+
+<img src="./graph.svg">
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
