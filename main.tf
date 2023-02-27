@@ -1,6 +1,6 @@
 #Create CloudTrail trail
 resource "aws_cloudtrail" "management-trail" {
-  name                          = "management-trail"
+  name                          = "${var.namespace}-management-trail"
   s3_bucket_name                = aws_s3_bucket.management-bucket.id
   include_global_service_events = true
   is_multi_region_trail         = true
