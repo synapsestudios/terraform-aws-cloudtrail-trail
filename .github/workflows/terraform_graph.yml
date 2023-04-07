@@ -38,7 +38,7 @@ jobs:
 
       - name: Convert Graph to SVG
         id: graph_convert
-        run: dot -Tsvg graph.dot >> graph.svg
+        run: dot -Tsvg graph.dot > graph.svg
 
       - name: Push changes back to PR branch
         uses: stefanzweifel/git-auto-commit-action@v4
