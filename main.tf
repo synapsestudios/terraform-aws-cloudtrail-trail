@@ -27,8 +27,19 @@ resource "aws_s3_bucket_policy" "management-bucket-policy" {
   policy = data.aws_iam_policy_document.cloudtrail_s3_policy.json
 }
 
+resource "aws_s3_bucket_ownership_controls" "management-bucket-ownership-controls" {
+  bucket = aws_s3_bucket.management-bucket.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 #Create bucket ACL
 resource "aws_s3_bucket_acl" "management-bucket-acl" {
+  depends_on = [
+    aws_s3_bucket_ownership_controls.management-bucket-ownership-controls,
+  ]
+
   bucket = aws_s3_bucket.management-bucket.id
   access_control_policy {
     grant {
